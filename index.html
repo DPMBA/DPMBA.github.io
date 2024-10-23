@@ -6,47 +6,67 @@
     <title>Dharmanshu H. Poshiya - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Global Styling */
+        /* Variables for Global Colors and Fonts */
+        :root {
+            --main-bg-color: #0a192f;
+            --accent-color: #64ffda;
+            --text-color: #ccd6f6;
+            --muted-text-color: #8892b0;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* General Reset and Body Styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            font-family: var(--font-family);
         }
 
         body {
-            background-color: #0a192f;
-            color: #ccd6f6;
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
             line-height: 1.6;
-            scroll-behavior: smooth;
+            font-size: 1rem;
         }
 
         a {
             text-decoration: none;
-            color: #64ffda;
+            color: var(--accent-color);
+            transition: color 0.3s ease;
         }
 
-        h1, h2, h3, h4 {
+        a:hover {
             color: #fff;
-            font-weight: 700;
         }
 
-        p {
-            color: #8892b0;
+        /* Smooth scrolling animations */
+        section {
+            padding: 5rem 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
         }
 
-        /* Sidebar Navigation */
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Navbar styling */
         nav {
             position: fixed;
             top: 0;
             left: 0;
-            height: 100%;
             width: 80px;
-            background-color: #0a192f;
+            height: 100%;
+            background-color: var(--main-bg-color);
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            z-index: 100;
         }
 
         nav ul {
@@ -54,102 +74,110 @@
         }
 
         nav ul li {
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
 
         nav ul li a {
-            color: #64ffda;
             font-size: 1.5rem;
+            color: var(--accent-color);
             transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #8892b0;
+            color: var(--muted-text-color);
         }
 
-        /* Header Section */
+        /* Header Styling */
         header {
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: left;
+            text-align: center;
             height: 100vh;
-            padding-left: 100px;
-            background-color: #0a192f;
-        }
-
-        .header-content {
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            padding: 0 2rem;
+            background-color: var(--main-bg-color);
         }
 
         .header-content h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: #fff;
+            margin-bottom: 1rem;
+            animation: slideIn 2s ease forwards;
         }
 
         .header-content h2 {
             font-size: 2rem;
-            color: #64ffda;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
         }
 
         .header-content p {
-            margin: 2rem 0;
+            color: var(--muted-text-color);
             font-size: 1.2rem;
-            color: #8892b0;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
         }
 
         .header-content a {
-            background-color: transparent;
-            border: 2px solid #64ffda;
-            color: #64ffda;
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
         }
 
         .header-content a:hover {
-            background-color: #64ffda;
-            color: #0a192f;
+            background-color: var(--accent-color);
+            color: var(--main-bg-color);
         }
 
-        /* Section Styling */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
+        /* Keyframes for Slide In Animation */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
+        /* Section Titles */
         .section-title {
-            font-size: 1.5rem;
-            color: #64ffda;
-            margin-bottom: 3rem;
-            display: flex;
-            align-items: center;
+            font-size: 2rem;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
         }
 
-        .section-title:before {
-            content: '01.';
-            margin-right: 1rem;
-            color: #64ffda;
-            font-size: 1.2rem;
+        .section-title::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        /* About Section */
+        /* About Section Styling */
         .about-content {
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
 
+        /* Skills Styling */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .skill-card {
@@ -157,8 +185,14 @@
             padding: 1.5rem;
             border-radius: 10px;
             text-align: center;
-            color: #64ffda;
             width: 200px;
+            color: var(--accent-color);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background-color: #0a192f;
         }
 
         /* Projects Section */
@@ -172,11 +206,12 @@
             background-color: #112240;
             border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
+            background-color: #0a192f;
         }
 
         .project-card img {
@@ -187,11 +222,7 @@
 
         .project-content {
             padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            color: var(--text-color);
         }
 
         /* Contact Section */
@@ -202,35 +233,68 @@
         }
 
         .contact-content p {
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .social-links a {
-            color: #64ffda;
-            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-size: 2rem;
             transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: #8892b0;
+            color: #fff;
         }
 
-        /* Footer */
+        /* Footer Styling */
         footer {
-            background-color: #0a192f;
-            color: #64ffda;
+            background-color: var(--main-bg-color);
+            color: var(--accent-color);
             text-align: center;
-            padding: 1rem;
+            padding: 1.5rem;
             margin-top: 3rem;
         }
 
+        /* Media Queries for Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            header {
+                padding: 0 1rem;
+            }
+
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .header-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .header-content p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -256,7 +320,7 @@
     </header>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="about-section">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <p>I am a results-oriented MBA student specializing in Supply Chain & Operations with a background in sales, customer service, and engineering. I have excelled academically and professionally, leveraging strong analytical and communication skills, with a passion for logistics and operations. Currently pursuing an MBA with a GPA of 4.1/4.5 at the University of Manitoba.</p>
@@ -264,7 +328,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" class="skills-section">
         <h2 class="section-title">Skills</h2>
         <div class="skills-container">
             <div class="skill-card">Supply Chain & Operations</div>
@@ -275,7 +339,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="projects-section">
         <h2 class="section-title">Professional Highlights</h2>
         <div class="projects-grid">
             <div class="project-card">
@@ -300,7 +364,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="contact-section">
         <h2 class="section-title">Contact Me</h2>
         <div class="contact-content">
             <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
@@ -316,5 +380,21 @@
     <footer>
         <p>&copy; 2024 Dharmanshu H. Poshiya. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Scroll-triggered animations
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', checkScroll);
+
+        function checkScroll() {
+            const triggerBottom = window.innerHeight / 5 * 4;
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if(sectionTop < triggerBottom) {
+                    section.classList.add('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
