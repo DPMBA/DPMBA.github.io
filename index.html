@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Dharmanshu H. Poshiya - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -16,6 +16,7 @@
         body {
             line-height: 1.6;
             color: #333;
+            scroll-behavior: smooth;
         }
 
         header {
@@ -24,12 +25,16 @@
             background-position: center;
             height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
             color: white;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
         nav {
@@ -39,6 +44,7 @@
             background-color: rgba(255, 255, 255, 0.95);
             padding: 1rem;
             z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
@@ -62,11 +68,17 @@
         .header-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
+            animation: slideInFromLeft 1s ease-out;
         }
 
         .header-content p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
+        }
+
+        @keyframes slideInFromLeft {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
         }
 
         .btn {
@@ -85,6 +97,13 @@
 
         section {
             padding: 5rem 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         .section-title {
@@ -116,57 +135,12 @@
             width: 200px;
         }
 
-        .skill-card i {
-            font-size: 2.5rem;
-            color: #007bff;
-            margin-bottom: 1rem;
-        }
-
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .project-card {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            color: #333;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #007bff;
         }
 
         footer {
@@ -177,14 +151,6 @@
         }
 
         @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .header-content p {
-                font-size: 1.2rem;
-            }
-
             nav ul {
                 flex-direction: column;
                 align-items: center;
@@ -205,8 +171,8 @@
 
     <header id="home">
         <div class="header-content">
-            <h1>Your Name</h1>
-            <p>Your Professional Title</p>
+            <h1>Dharmanshu H. Poshiya</h1>
+            <p>MBA Student | Sales and Customer Service Professional</p>
             <a href="#contact" class="btn">Get in Touch</a>
         </div>
     </header>
@@ -214,7 +180,7 @@
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <p>Write a brief introduction about yourself, your background, and what drives you professionally. Make it personal and engaging.</p>
+            <p>I'm a results-oriented MBA student specializing in supply chain, with a background in sales and customer service. I have a strong technical aptitude and a passion for operations and logistics.</p>
         </div>
     </section>
 
@@ -222,40 +188,33 @@
         <h2 class="section-title">Skills</h2>
         <div class="skills-container">
             <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>HTML, CSS, JavaScript</p>
+                <i class="fas fa-cogs"></i>
+                <h3>Supply Chain & Operations</h3>
             </div>
             <div class="skill-card">
-                <i class="fas fa-paint-brush"></i>
-                <h3>Design</h3>
-                <p>UI/UX, Figma, Adobe XD</p>
+                <i class="fas fa-chart-line"></i>
+                <h3>Sales & Business Development</h3>
             </div>
             <div class="skill-card">
-                <i class="fas fa-database"></i>
-                <h3>Backend</h3>
-                <p>Node.js, Python, SQL</p>
+                <i class="fas fa-customer-service"></i>
+                <h3>Customer Service</h3>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">Professional Highlights</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="/api/placeholder/400/300" alt="Project 1">
                 <div class="project-content">
-                    <h3>Project Name</h3>
-                    <p>Brief description of the project and your role in it.</p>
-                    <a href="#" class="btn">View Project</a>
+                    <h3>Top Sales Representative - Meta</h3>
+                    <p>Ranked 1st in Canada for individual sales, surpassing targets by 800%.</p>
                 </div>
             </div>
             <div class="project-card">
-                <img src="/api/placeholder/400/300" alt="Project 2">
                 <div class="project-content">
-                    <h3>Project Name</h3>
-                    <p>Brief description of the project and your role in it.</p>
-                    <a href="#" class="btn">View Project</a>
+                    <h3>Exceeded Targets at Daikin</h3>
+                    <p>Achieved 492% growth in FY23, maintaining 100% customer satisfaction.</p>
                 </div>
             </div>
         </div>
@@ -265,17 +224,16 @@
         <h2 class="section-title">Contact Me</h2>
         <div class="contact-content">
             <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-            <p>Email: your.email@example.com</p>
+            <p>Email: dharmanshuposhiya56@gmail.com</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/dharmanshu-poshiya"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/DPMBA"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2024 Dharmanshu H. Poshiya. All rights reserved.</p>
     </footer>
 </body>
 </html>
