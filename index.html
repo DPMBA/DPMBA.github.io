@@ -6,7 +6,6 @@
     <title>Dharmanshu H. Poshiya - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Global Styling Variables */
         :root {
             --main-bg-gradient: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
             --text-color: #ccd6f6;
@@ -25,326 +24,185 @@
         }
 
         body {
-            background: var(--main-bg-gradient);
+            background: var(--bg-dark);
             color: var(--text-color);
             line-height: 1.6;
             font-size: 1rem;
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--accent-color);
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #fff;
-        }
-
-        /* Parallax Background */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--main-bg-gradient);
-            z-index: -1;
-            background-attachment: fixed;
-        }
-
-        /* Smooth scrolling sections */
-        section {
-            padding: 5rem 2rem;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        section.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Navbar styling */
         nav {
             position: fixed;
             top: 0;
-            left: 0;
-            width: 80px;
-            height: 100%;
+            width: 100%;
             background-color: var(--bg-dark);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 1rem;
             z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
             list-style: none;
         }
 
-        nav ul li {
-            margin: 2rem 0;
-        }
-
         nav ul li a {
-            font-size: 1.5rem;
             color: var(--accent-color);
-            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
         }
 
-        nav ul li a:hover {
-            color: var(--text-color);
-            transform: scale(1.1);
-        }
-
-        /* Header Styling */
         header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
             height: 100vh;
-            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             padding: 0 2rem;
+            background: var(--main-bg-gradient);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin-top: -60px;
         }
 
         .header-content h1 {
-            font-size: 4rem;
-            color: #fff;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            animation: fadeIn 2s ease;
+            color: #fff;
         }
 
         .header-content h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--accent-color);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        .header-content p {
-            color: var(--muted-text-color);
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
+        section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .header-content a {
-            padding: 1rem 2rem;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-            border-radius: 5px;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .header-content a:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-dark);
-            box-shadow: 0 4px 15px rgba(100, 255, 218, 0.5);
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Section Titles */
         .section-title {
             font-size: 2.5rem;
             color: var(--accent-color);
             text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
+            margin-bottom: 3rem;
         }
 
-        .section-title::before {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* About Section Styling */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Skills Section */
         .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .skill-card {
-            background-color: var(--bg-light);
-            padding: 1.5rem;
+            background: var(--bg-light);
+            padding: 2rem;
             border-radius: 10px;
             text-align: center;
-            width: 200px;
-            color: var(--accent-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .project-card {
-            background-color: var(--bg-light);
+            background: var(--bg-light);
             border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 2rem;
+            transition: transform 0.3s ease;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-            color: var(--text-color);
-        }
-
-        /* Contact Section */
         .contact-content {
+            text-align: center;
             max-width: 600px;
             margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-content p {
-            margin-bottom: 2rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
+            margin-top: 2rem;
         }
 
         .social-links a {
-            color: var(--accent-color);
             font-size: 2rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #fff;
-            transform: scale(1.2);
-        }
-
-        /* Footer Styling */
-        footer {
-            background-color: var(--bg-dark);
             color: var(--accent-color);
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
+            transition: transform 0.3s ease;
         }
 
-        /* Media Queries for Mobile Responsiveness */
         @media (max-width: 768px) {
-            nav {
-                width: 100%;
-                height: auto;
-                position: relative;
-                padding: 1rem 0;
-            }
-
-            nav ul {
-                flex-direction: row;
-                justify-content: space-around;
-            }
-
-            header {
-                padding: 0 1rem;
-            }
-
             .header-content h1 {
                 font-size: 2.5rem;
             }
-
+            
             .header-content h2 {
                 font-size: 1.5rem;
             }
-
-            .header-content p {
-                font-size: 1rem;
-            }
-
+            
             section {
                 padding: 3rem 1rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul li a {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Sidebar Navigation -->
     <nav>
         <ul>
-            <li><a href="#home"><i class="fas fa-home"></i></a></li>
-            <li><a href="#about"><i class="fas fa-user"></i></a></li>
-            <li><a href="#skills"><i class="fas fa-cogs"></i></a></li>
-            <li><a href="#projects"><i class="fas fa-briefcase"></i></a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Header Section -->
     <header id="home">
         <div class="header-content">
             <h1>Dharmanshu H. Poshiya</h1>
             <h2>MBA Student | Sales & Customer Service Professional</h2>
-            <p>I specialize in supply chain and operations, with a proven track record in sales, customer service, and engineering. Let's build something amazing together.</p>
-            <a href="#contact">Get in Touch</a>
+            <p>Specializing in supply chain and operations with proven expertise in sales and customer service.</p>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <p>I am a results-oriented MBA student specializing in Supply Chain & Operations with a background in sales, customer service, and engineering. I have excelled academically and professionally, leveraging strong analytical and communication skills, with a passion for logistics and operations. Currently pursuing an MBA with a GPA of 4.1/4.5 at the University of Manitoba.</p>
+            <p>MBA student at University of Manitoba with a 4.1/4.5 GPA, specializing in Supply Chain & Operations. Combining academic excellence with professional experience in sales and customer service.</p>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
+    <section id="skills">
         <h2 class="section-title">Skills</h2>
         <div class="skills-container">
             <div class="skill-card">Supply Chain & Operations</div>
@@ -354,36 +212,27 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
+    <section id="projects">
         <h2 class="section-title">Professional Highlights</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-content">
-                    <h3>Meta Sales Representative</h3>
-                    <p>Ranked 1st in Canada for individual sales, resulting in an 800% sales increase.</p>
-                </div>
+                <h3>Meta Sales Representative</h3>
+                <p>Ranked #1 in Canada with 800% sales increase</p>
             </div>
             <div class="project-card">
-                <div class="project-content">
-                    <h3>Senior Sales Engineer - Daikin</h3>
-                    <p>Achieved 492% growth in FY23, exceeding budgeted targets by 110%.</p>
-                </div>
+                <h3>Senior Sales Engineer</h3>
+                <p>Achieved 492% growth in FY23</p>
             </div>
             <div class="project-card">
-                <div class="project-content">
-                    <h3>Customer Service Executive - Daikin</h3>
-                    <p>Maintained 100% customer satisfaction by ensuring timely service delivery.</p>
-                </div>
+                <h3>Customer Service Executive</h3>
+                <p>100% customer satisfaction rate</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact">
         <h2 class="section-title">Contact Me</h2>
         <div class="contact-content">
-            <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
             <p>Email: dharmanshuposhiya56@gmail.com</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/dharmanshu-poshiya"><i class="fab fa-linkedin"></i></a>
@@ -392,25 +241,27 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Dharmanshu H. Poshiya. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Scroll-triggered animations
         const sections = document.querySelectorAll('section');
-        window.addEventListener('scroll', checkScroll);
-
-        function checkScroll() {
-            const triggerBottom = window.innerHeight / 5 * 4;
+        const navLinks = document.querySelectorAll('nav a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
             sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop < triggerBottom) {
-                    section.classList.add('active');
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - sectionHeight/3)) {
+                    current = section.getAttribute('id');
                 }
             });
-        }
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
