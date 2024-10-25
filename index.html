@@ -6,59 +6,41 @@
     <title>Dharmanshu H. Poshiya - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Modern CSS Reset */
-        *, *::before, *::after {
+        :root {
+            --primary: #B47D56;
+            --secondary: #8B5E3C;
+            --text-main: #333333;
+            --text-light: #666666;
+            --background: #FFFFFF;
+            --transition: all 0.3s ease;
+        }
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Custom Properties */
-        :root {
-            --primary: #64ffda;
-            --bg-dark: #0a192f;
-            --bg-card: #112240;
-            --text-main: #ccd6f6;
-            --text-secondary: #8892b0;
-            --transition: all 0.3s ease;
-        }
-
-        /* Global Styles */
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--background);
             color: var(--text-main);
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
         }
 
-        /* Typography */
-        h1, h2, h3, h4 {
-            color: #fff;
-            line-height: 1.2;
-        }
-
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        /* Enhanced Navigation */
         .nav-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(10, 25, 47, 0.95);
-            padding: 1rem;
+            background-color: white;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -67,8 +49,9 @@
 
         .nav-logo {
             color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -80,173 +63,122 @@
         .nav-links a {
             color: var(--text-main);
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
             transition: var(--transition);
         }
 
         .nav-links a:hover {
             color: var(--primary);
-            background-color: rgba(100, 255, 218, 0.1);
         }
 
-        /* Enhanced Header */
         header {
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 2rem;
-            position: relative;
-            overflow: hidden;
+            background-color: #f8f8f8;
         }
 
-        .header-content {
-            max-width: 1200px;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
             margin: 0 auto;
-            animation: fadeInUp 1s ease-out;
+            padding-top: 80px;
         }
 
-        .header-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--primary), #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .header-subtitle {
-            font-size: clamp(1.5rem, 3vw, 2rem);
+        .hero-title {
+            font-size: 5rem;
             color: var(--primary);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            color: var(--secondary);
             margin-bottom: 1.5rem;
         }
 
-        .header-text {
+        .hero-text {
             font-size: 1.2rem;
-            max-width: 600px;
+            color: var(--text-light);
             margin-bottom: 2rem;
+            max-width: 600px;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border: 2px solid var(--primary);
-            border-radius: 4px;
-            color: var(--primary);
-            text-decoration: none;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+        .hero-image {
+            background: url('/api/placeholder/600/800') center/cover;
+            border-radius: 8px;
+            min-height: 600px;
         }
 
-        .cta-button:hover {
-            background-color: rgba(100, 255, 218, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Enhanced Sections */
-        section {
+        .section {
             padding: 8rem 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 2rem;
-            color: #fff;
+            font-size: 4rem;
+            color: var(--primary);
             margin-bottom: 3rem;
-            position: relative;
-            display: inline-block;
+            font-weight: 800;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60%;
-            height: 3px;
-            background-color: var(--primary);
-        }
-
-        /* Enhanced Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-card {
-            background-color: var(--bg-card);
-            padding: 2rem;
-            border-radius: 8px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background-color: var(--primary);
-            transform: scaleY(0);
-            transition: var(--transition);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-card:hover::before {
-            transform: scaleY(1);
-        }
-
-        /* Enhanced Projects Section */
-        .projects-grid {
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .project-card {
-            background-color: var(--bg-card);
-            border-radius: 8px;
+        .card {
+            background: white;
             padding: 2rem;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 50px 50px 0;
-            border-color: transparent var(--primary) transparent transparent;
-            opacity: 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: var(--transition);
         }
 
-        .project-card:hover {
+        .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .project-card:hover::after {
-            opacity: 0.2;
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        /* Enhanced Contact Section */
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .contact-section {
+            background-color: #f8f8f8;
+            padding: 8rem 2rem;
             text-align: center;
         }
 
@@ -264,70 +196,40 @@
         }
 
         .social-links a:hover {
-            color: #fff;
+            color: var(--secondary);
             transform: translateY(-3px);
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary);
+            color: white;
         }
 
-        /* Mobile Responsive Design */
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 1rem;
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 3rem;
             }
 
             .nav-links {
                 display: none;
             }
 
-            header {
-                padding: 0 1rem;
-                text-align: center;
+            .section-title {
+                font-size: 3rem;
             }
-
-            .header-content {
-                padding-top: 5rem;
-            }
-
-            .skills-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 4rem 1rem;
-            }
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="nav-container">
         <nav>
-            <div class="nav-logo">D.P</div>
+            <a href="#home" class="nav-logo">D.P</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -339,62 +241,65 @@
     </div>
 
     <header id="home">
-        <div class="header-content">
-            <h1 class="header-title">Dharmanshu H. Poshiya</h1>
-            <h2 class="header-subtitle">MBA Student | Sales & Customer Service Professional</h2>
-            <p class="header-text">I specialize in supply chain and operations, with a proven track record in sales, customer service, and engineering. Let's build something amazing together.</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1 class="hero-title">OUR TALENT</h1>
+                <h2 class="hero-subtitle">MBA Student | Sales & Customer Service Professional</h2>
+                <p class="hero-text">I specialize in supply chain and operations, with a proven track record in sales, customer service, and engineering. Let's build something amazing together.</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
+            <div class="hero-image"></div>
         </div>
     </header>
 
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
+    <section id="about" class="section">
+        <h2 class="section-title">OUR STORY</h2>
         <div class="about-content">
             <p>I am a results-oriented MBA student specializing in Supply Chain & Operations with a background in sales, customer service, and engineering. I have excelled academically and professionally, leveraging strong analytical and communication skills, with a passion for logistics and operations. Currently pursuing an MBA with a GPA of 4.1/4.5 at the University of Manitoba.</p>
         </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="section">
         <h2 class="section-title">Core Competencies</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
+        <div class="grid">
+            <div class="card">
                 <h3>Supply Chain & Operations</h3>
                 <p>Strategic planning and implementation of supply chain solutions</p>
             </div>
-            <div class="skill-card">
+            <div class="card">
                 <h3>Sales & Business Development</h3>
                 <p>Proven track record of exceeding sales targets and growing business</p>
             </div>
-            <div class="skill-card">
+            <div class="card">
                 <h3>Customer Service</h3>
                 <p>Excellence in client relationship management and support</p>
             </div>
-            <div class="skill-card">
+            <div class="card">
                 <h3>Mechanical Engineering</h3>
                 <p>Strong technical background with practical applications</p>
             </div>
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="section">
         <h2 class="section-title">Professional Highlights</h2>
-        <div class="projects-grid">
-            <div class="project-card">
+        <div class="grid">
+            <div class="card">
                 <h3>Meta Sales Representative</h3>
                 <p>Ranked 1st in Canada for individual sales, resulting in an 800% sales increase.</p>
             </div>
-            <div class="project-card">
+            <div class="card">
                 <h3>Senior Sales Engineer - Daikin</h3>
                 <p>Achieved 492% growth in FY23, exceeding budgeted targets by 110%.</p>
             </div>
-            <div class="project-card">
+            <div class="card">
                 <h3>Customer Service Executive - Daikin</h3>
                 <p>Maintained 100% customer satisfaction by ensuring timely service delivery.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="contact-section">
         <h2 class="section-title">Let's Connect</h2>
         <div class="contact-content">
             <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
