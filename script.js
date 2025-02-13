@@ -1,40 +1,84 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('.section');
+    // Smooth Scrolling
     const navLinks = document.querySelectorAll('.nav-links a');
-
-    // Intersection Observer for section animations
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, {
-        threshold: 0.1 // Adjust as needed
-    });
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // Smooth scrolling for navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
-      // Set animation delay for skills (staggered effect)
-    const skills = document.querySelectorAll('.animate-skill');
-    skills.forEach((skill, index) => {
-        skill.style.setProperty('--skill-index', index);
+    // Skill Bubble Hover Effect
+    const skillBubbles = document.querySelectorAll('.skill-bubble');
+    const skillDescription = document.querySelector('.skill-description');
+
+    skillBubbles.forEach(bubble => {
+        bubble.addEventListener('mouseenter', function() {
+            const description = this.dataset.description;
+            skillDescription.textContent = description;
+            skillDescription.style.opacity = 1;
+
+             // Calculate position relative to the bubble
+            const rect = bubble.getBoundingClientRect();
+            //Centers it
+            skillDescription.style.left = `${rect.left + window.scrollX + rect.width / 2}px`;
+            skillDescription.style.top = `${rect.bottom + window.scrollY + 10}px`; // 10px gap
+
+        });
+
+        bubble.addEventListener('mouseleave', function() {
+            skillDescription.style.opacity = 0;
+        });
+    });
+
+    // Initialize Swiper (Testimonials Carousel)
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true, // Enable looping
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+     // Typewriter Effect (Hero Title)
+    const heroTitleSpan = document.querySelector('.typewriter');
+    if (heroTitleSpan){
+        const typewriter = new Typewriter(heroTitleSpan, {
+        loop: true,
+        delay: 75, // Adjust typing speed
+    });
+
+    typewriter
+        .typeString('Dharmanshu H. Poshiya')
+        .pauseFor(1500)
+        .deleteAll()
+        .typeString('Sales Professional')
+        .pauseFor(1500)
+        .deleteAll()
+        .typeString('Engineer')
+        .pauseFor(1500)
+        .start();
+
+    }
+    // Intersection Observer for section animations (Optional - Add if you want subtle fade-ins)
+    const sections = document.querySelectorAll('.section'); // Or more specific selectors
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in'); // Add a class for animation
+            }
+        });
+    }, {
+        threshold: 0.2 // Adjust as needed
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
     });
 });
