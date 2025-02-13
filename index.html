@@ -9,10 +9,12 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+      <!-- Include Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 </head>
 <body>
-    <div class="background-animation"></div>
     <header>
         <nav>
             <div class="logo">DP</div>
@@ -29,175 +31,188 @@
         </nav>
     </header>
 
-   <section id="about" class="section parallax">
-    <div class="container">
-        <div class="about-content">
-            <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic animate-pop-in">
-            <div class="about-text animate-slide-in">
-                <h2>About Me</h2>
-                <p>Passionate Sales Representative dedicated to delivering an unparalleled customer experience. Proven track record in understanding customer needs, communicating effectively, and maintaining an outstanding brand presentation. Committed to continuous learning and striving for excellence in all endeavors.</p>
-                <p>Consistently exceeded budgeted targets in previous sales roles, ranking 1st in Canada for individual sales and 2nd for store sales while representing Meta. Experienced in Engineering Sales & Customer Service for Daikin, the world's No. 1 HVAC company.</p>
+    <section id="hero" class="section">
+        <div class="container">
+           <div class="hero-content">
+                <h1 class="hero-title"><span class="typewriter"></span></h1>
+                <p class="hero-subtitle">Sales Representative & Engineer</p>
+                <a href="#about" class="cta-button">Learn More</a>
             </div>
         </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+          <div class="about-content">
+            <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Passionate Sales Representative dedicated to delivering an unparalleled customer experience. Proven track record in understanding customer needs, communicating effectively, and maintaining an outstanding brand presentation.</p> <p>Committed to continuous learning and striving for excellence. Experienced in Engineering Sales & Customer Service.</p>
+                </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+    <div class="container">
+        <h2>Skills & Strengths</h2>
+        <div class="skills-bubbles">
+            <div class="skill-bubble" data-description="Deep understanding of customer needs and providing exceptional service.">
+                <i class="fas fa-users"></i>
+                <span>Customer Experience</span>
+            </div>
+            <div class="skill-bubble" data-description="Clear and concise communication to build strong relationships.">
+                <i class="fas fa-comments"></i>
+                <span>Effective Communication</span>
+            </div>
+            <div class="skill-bubble" data-description="Maintaining a professional and consistent brand image.">
+                <i class="fas fa-bullhorn"></i>
+                <span>Brand Presentation</span>
+            </div>
+            <div class="skill-bubble" data-description="Staying up-to-date with industry trends and product knowledge.">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Continuous Learning</span>
+            </div>
+            <div class="skill-bubble" data-description="Meticulous and focused on delivering high-quality results.">
+                <i class="fas fa-search"></i>
+                <span>Attention to Detail</span>
+            </div>
+             <div class="skill-description"></div>
+        </div>
+
     </div>
 </section>
 
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills & Strengths</h2>
-            <div class="skills-grid">
-                <div class="skill animate-skill">
-                    <i class="fas fa-users"></i>
-                    <h3>Customer Experience</h3>
-                    <p>Deep understanding of customer needs and providing exceptional service.</p>
-                </div>
-                <div class="skill animate-skill">
-                    <i class="fas fa-comments"></i>
-                    <h3>Effective Communication</h3>
-                    <p>Clear and concise communication to build strong relationships.</p>
-                </div>
-                <div class="skill animate-skill">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>Outstanding Brand Presentation</h3>
-                    <p>Maintaining a professional and consistent brand image.</p>
-                </div>
-                <div class="skill animate-skill">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Continuous Learning</h3>
-                    <p>Dedicated to staying up-to-date with industry trends and product knowledge.</p>
-                </div>
-                <div class="skill animate-skill">
-                    <i class="fas fa-search"></i>
-                    <h3>Attention to Detail</h3>
-                    <p>Meticulous and focused on delivering high-quality results.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="accomplishments" class="section">
+    <div class="container">
+        <h2>Professional Accomplishments</h2>
+        <ul class="accomplishments-list">
+            <li><i class="fas fa-trophy"></i> Ranked 1st in Canada for individual sales and 2nd for store sales (Meta).</li>
+            <li><i class="fas fa-chart-line"></i> 800% increase in sales at Daikin.</li>
+            <li><i class="fas fa-check-circle"></i> 100% customer satisfaction.</li>
+            <li><i class="fas fa-dollar-sign"></i> Exceeded spare parts sales target by 110%.</li>
+            <li><i class="fas fa-arrow-up"></i> Achieved 492% growth over FY22.</li>
+        </ul>
+    </div>
+</section>
 
-    <section id="accomplishments" class="section parallax">
-        <div class="container">
-            <h2>Professional Accomplishments</h2>
-             <ul class="animate-fade-in">
-                <li><i class="fas fa-trophy"></i> Ranked 1st in entire Canada for individual sales and 2nd for store sales as a Meta Sales Representative.</li>
-                <li><i class="fas fa-chart-line"></i> Exceeded budgeted targets for previous role at Daikin, resulting in an 800% increase in sales.</li>
-                <li><i class="fas fa-check-circle"></i> Achieved 100% customer satisfaction.</li>
-                <li><i class="fas fa-dollar-sign"></i> Over achieved budgeted spare parts sales target by 110%.</li>
-                <li><i class="fas fa-arrow-up"></i> Achieved growth of 492% over the FY22.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
+<section id="projects" class="section">
     <div class="container">
         <h2>Projects</h2>
-        <div class="project-gallery">
+        <div class="project-grid">
             <div class="project-item">
                 <img src="images/project1.jpg" alt="Project 1" class="project-image">
                 <div class="project-overlay">
                     <h3>Project 1 Title</h3>
-                    <p>Short description of Project 1. Technologies used, etc.</p>
-                    <a href="#" target="_blank">Learn More</a>
+                    <p>Short description. Tech used.</p>
+                    <a href="#" target="_blank" class="project-link">View Project</a>
                 </div>
             </div>
             <div class="project-item">
                 <img src="images/project2.jpg" alt="Project 2" class="project-image">
                 <div class="project-overlay">
                     <h3>Project 2 Title</h3>
-                    <p>Short description of Project 2.</p>
-                    <a href="#" target="_blank">Learn More</a>
+                    <p>Short description.</p>
+                    <a href="#" target="_blank" class="project-link">View Project</a>
                 </div>
             </div>
             <div class="project-item">
                 <img src="images/project3.jpg" alt="Project 3" class="project-image">
                 <div class="project-overlay">
                     <h3>Project 3 Title</h3>
-                    <p>Short description of Project 3.</p>
-                    <a href="#" target="_blank">Learn More</a>
+                    <p>Short description.</p>
+                    <a href="#" target="_blank" class="project-link">View Project</a>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
-    <section id="experience" class="section parallax">
-        <div class="container">
-            <h2>Work Experience</h2>
-           <div class="job animate-slide-in">
-                <h3>Meta (Facebook) Sales Representative</h3>
-                <p class="job-details">BDS Connected Solutions LLC | Winnipeg | (09/2023) - (12/2023)</p>
-                <ul>
-                    <li>Managed Sales of Meta Quest 2,3 Pro and Ray ban- Meta Smart glasses.</li>
-                    <li>Converted product benefits to sales.</li>
-                    <li>Engaged & educated retail sales associates.</li>
-                    <li>Overachieved Sales targets.</li>
-                </ul>
+   <section id="experience" class="section">
+    <div class="container">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Meta (Facebook) Sales Representative</h3>
+                    <p class="timeline-date">BDS Connected Solutions LLC | Winnipeg | (09/2023 - 12/2023)</p>
+                    <p>Managed sales, converted benefits, educated associates, overachieved targets.</p>
+                </div>
             </div>
-             <div class="job animate-slide-in">
-                <h3>Sales Engineer</h3>
-                <p class="job-details">Daikin Air- conditioning | Ahmedabad | (11/2021) - (05/2023)</p>
-                <ul>
-                    <li>Responsible for Daikin Applied product sales.</li>
-                    <li>Responsible for Product Presentation to Corporate clients.</li>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Sales Engineer</h3>
+                    <p class="timeline-date">Daikin Air- conditioning | Ahmedabad | (11/2021 - 05/2023)</p>
+                    <p>Responsible for product sales and presentations.</p>
+                </div>
+            </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Customer Service Executive</h3>
+                    <p class="timeline-date">Daikin Air- conditioning | Ahmedabad | (07/2018) - (10/2021)</p>
+                    <p>Responsible for customer Service & Service Sales.</p>
+                </div>
+            </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Part time- Sales Executive</h3>
+                    <p class="timeline-date">Samsung Electronics Store | Ahmedabad | (01/2016) - (06/2018)</p>
+                    <p>Ranked #1 sales associate, drove revenue growth, trained team members.</p>
+                </div>
+            </div>
 
-                </ul>
-            </div>
-            <div class="job animate-slide-in">
-                <h3>Customer Service Executive</h3>
-                 <p class="job-details">Daikin Air- conditioning) | Ahmedabad | (07/2018) - (10/2021)</p>
-                <ul>
-                    <li>Responsible for customer Service & Service Sales.</li>
-                </ul>
-            </div>
-
-             <div class="job animate-slide-in">
-                <h3>Part time- Sales Executive</h3>
-               <p class="job-details">Samsung Electronics Store | Ahmedabad | (01/2016) - (06/2018)</p>
-                <ul>
-                    <li>Ranked #1 sales associate.</li>
-                     <li>Drove 15% YOY revenue growth.</li>
-                      <li>Trained 20+ new team members.</li>
-                       <li>Elevated customers' tech capabilities.</li>
-                </ul>
-            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="education" class="section">
         <div class="container">
             <h2>Education</h2>
-            <div class="education-item animate-fade-in">
+             <div class="education-item">
                 <h3>MBA - Marketing</h3>
                 <p>University of Manitoba, Winnipeg | 2023-2025 | (Current GPA: 4.17/4.5)</p>
             </div>
-            <div class="education-item animate-fade-in">
+            <div class="education-item">
                 <h3>B.E Mechanical Engineering</h3>
                 <p>Gujarat Technological University, Ahmedabad | 2014 – 2018 | (Dean's List)</p>
             </div>
         </div>
     </section>
 
-     <section id="testimonials" class="section parallax">
-        <div class="container">
-            <h2>Testimonials</h2>
-            <div class="testimonial animate-slide-in">
-                <p>"Dharmanshu is a highly motivated and results-oriented individual. He consistently exceeded expectations in his previous roles and demonstrated a strong commitment to customer satisfaction." - Testimonial 1</p>
-
+  <section id="testimonials" class="section">
+    <div class="container">
+        <h2>Testimonials</h2>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <p>"Dharmanshu is a highly motivated and results-oriented individual. He consistently exceeded expectations." - Testimonial 1</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                         <p>"He is a quick learner, adaptable, and possesses excellent communication skills." - Testimonial 2</p>
+                    </div>
+                </div>
             </div>
-            <div class="testimonial animate-slide-in">
-                <p>"He is a quick learner, adaptable, and possesses excellent communication skills. He would be a valuable asset to any team." - Testimonial 2</p>
-
-            </div>
+            <!-- Navigation arrows -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
              <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> Email: dharmanshuposhiya56@gmail.com</p>
-                <p><i class="fas fa-phone"></i> Phone: (204) 869-4582</p>
-                <p><i class="fas fa-map-marker-alt"></i> Location: Winnipeg, MB</p>
+                <p><i class="fas fa-envelope"></i> dharmanshuposhiya56@gmail.com</p>
+                <p><i class="fas fa-phone"></i> (204) 869-4582</p>
+                <p><i class="fas fa-map-marker-alt"></i> Winnipeg, MB</p>
             </div>
         </div>
     </section>
@@ -205,6 +220,8 @@
     <footer>
         <p>© 2024 Dharmanshu H. Poshiya. All rights reserved.</p>
     </footer>
-     <script src="script.js"></script>
+     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
