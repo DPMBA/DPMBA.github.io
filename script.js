@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
     // Smooth Scrolling
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
@@ -12,25 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Skill Bubble Hover Effect
-    const skillBubbles = document.querySelectorAll('.skill-bubble');
-    const skillDescription = document.querySelector('.skill-description');
-
-    skillBubbles.forEach(bubble => {
-        bubble.addEventListener('mouseenter', function() {
-            const description = this.dataset.description;
-            skillDescription.textContent = description;
-            skillDescription.style.opacity = 1;
-              // Calculate position relative to the bubble
-            const rect = bubble.getBoundingClientRect();
-            //Centers it
-            skillDescription.style.left = `${rect.left + window.scrollX + rect.width / 2}px`;
-            skillDescription.style.top = `${rect.bottom + window.scrollY + 10px`; // 10px gap
-        });
-
-        bubble.addEventListener('mouseleave', function() {
-            skillDescription.style.opacity = 0;
-        });
+    // Sticky Header with Shrink Effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('shrink');
+        } else {
+            header.classList.remove('shrink');
+        }
     });
 
     // Initialize Swiper (Testimonials Carousel)
@@ -44,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
     });
 
-    // Typewriter Effect (Hero Title)
+     // Typewriter Effect (Hero Title)
     const heroTitleSpan = document.querySelector('.typewriter');
       if (heroTitleSpan){
             const typewriter = new Typewriter(heroTitleSpan, {
@@ -65,35 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-    // Ripple Effect
-    document.querySelectorAll('.ripple-element').forEach(el => {
-        el.addEventListener('click', function(e) {
-            let ripple = document.createElement('span');
-            ripple.classList.add('ripple');
-
-            // Get click position relative to the element
-            let rect = el.getBoundingClientRect();
-            let x = e.clientX - rect.left;
-            let y = e.clientY - rect.top;
-
-            ripple.style.left = `${x}px`;
-            ripple.style.top = `${y}px`;
-
-            el.appendChild(ripple);
-
-            // Remove ripple after animation completes
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        });
-    });
-
-        // Intersection Observer for section animations (Optional - Add if you want subtle fade-ins)
+        // Intersection Observer for section animations
     const sections = document.querySelectorAll('.section'); // Or more specific selectors
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in'); // Add a class for animation
+                entry.target.classList.add('animate-in'); // Add a class for animation, define in CSS
             }
         });
     }, {
@@ -103,4 +70,5 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
         observer.observe(section);
     });
+
 });
