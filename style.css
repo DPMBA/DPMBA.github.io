@@ -193,3 +193,96 @@ nav {
 }.experience-details {
     font-style: italic;
     color: #70757a;
+    margin-bottom: 10px;
+}
+
+/* Education Section */.education-list {
+    margin-top: 40px;
+}.education-item {
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+/* Contact Section */.contact-info {
+    text-align: left;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 12px;
+}.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}.contact-info i {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: #3e82f7; /* Keep the consistent blue */
+    width: 30px; /* Ensure icon has consistent space */
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #f0f0f0;
+    color: #5f6368;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Card Style */.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+        width: 90%;
+    }
+
+  .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+  .nav-links li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+  .nav-links a {
+        display: block;
+        padding: 10px;
+    }
+
+  .hero-title {
+        font-size: 3em;
+    }
+
+  .hero-subtitle {
+        font-size: 1.2em;
+    }
+
+  .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+  .profile-pic {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+  .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+  .skill-card {
+        padding: 20px; /* Reduce padding */
+    }
+}
