@@ -21,13 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const description = this.dataset.description;
             skillDescription.textContent = description;
             skillDescription.style.opacity = 1;
-
-             // Calculate position relative to the bubble
+              // Calculate position relative to the bubble
             const rect = bubble.getBoundingClientRect();
             //Centers it
             skillDescription.style.left = `${rect.left + window.scrollX + rect.width / 2}px`;
-            skillDescription.style.top = `${rect.bottom + window.scrollY + 10}px`; // 10px gap
-
+            skillDescription.style.top = `${rect.bottom + window.scrollY + 10px`; // 10px gap
         });
 
         bubble.addEventListener('mouseleave', function() {
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize Swiper (Testimonials Carousel)
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
+       slidesPerView: 1,
         spaceBetween: 30,
         loop: true, // Enable looping
         navigation: {
@@ -46,27 +44,51 @@ document.addEventListener('DOMContentLoaded', function() {
         },
     });
 
-     // Typewriter Effect (Hero Title)
+    // Typewriter Effect (Hero Title)
     const heroTitleSpan = document.querySelector('.typewriter');
-    if (heroTitleSpan){
-        const typewriter = new Typewriter(heroTitleSpan, {
-        loop: true,
-        delay: 75, // Adjust typing speed
-    });
+      if (heroTitleSpan){
+            const typewriter = new Typewriter(heroTitleSpan, {
+            loop: true,
+            delay: 65, // Adjust typing speed
+        });
 
-    typewriter
-        .typeString('Dharmanshu H. Poshiya')
-        .pauseFor(1500)
-        .deleteAll()
-        .typeString('Sales Professional')
-        .pauseFor(1500)
-        .deleteAll()
-        .typeString('Engineer')
-        .pauseFor(1500)
-        .start();
+        typewriter
+            .typeString('Dharmanshu H. Poshiya')
+            .pauseFor(1500)
+            .deleteAll()
+            .typeString('Sales Professional')
+            .pauseFor(1500)
+            .deleteAll()
+            .typeString('Engineer')
+            .pauseFor(1500)
+            .start();
 
     }
-    // Intersection Observer for section animations (Optional - Add if you want subtle fade-ins)
+
+    // Ripple Effect
+    document.querySelectorAll('.ripple-element').forEach(el => {
+        el.addEventListener('click', function(e) {
+            let ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+
+            // Get click position relative to the element
+            let rect = el.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+
+            el.appendChild(ripple);
+
+            // Remove ripple after animation completes
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+
+        // Intersection Observer for section animations (Optional - Add if you want subtle fade-ins)
     const sections = document.querySelectorAll('.section'); // Or more specific selectors
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
