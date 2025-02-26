@@ -8,12 +8,22 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <!-- Material Icons for a subtle iconography -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Google Fonts (Roboto) for a clean, modern look -->
+  <!-- Google Fonts (Google Sans & Roboto) for a clean, modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <!-- Swiper CSS for testimonials slider -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
+  <!-- Page Loader -->
+  <div class="loader">
+    <div class="loader-dots">
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+    </div>
+  </div>
+
   <header>
     <nav>
       <div class="logo">DP</div>
@@ -27,13 +37,21 @@
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="mobile-toggle">
+        <span class="material-icons">menu</span>
+      </button>
     </nav>
   </header>
 
   <section id="hero" class="section">
+    <div class="hero-bg">
+      <div class="bg-shape shape1"></div>
+      <div class="bg-shape shape2"></div>
+      <div class="bg-shape shape3"></div>
+    </div>
     <div class="container">
       <div class="hero-content">
-        <h1 class="hero-title"><span class="typewriter"></span></h1>
+        <h1 class="hero-title">Dharmanshu H. Poshiya</h1>
         <p class="hero-subtitle">Sales Representative &amp; Engineer</p>
         <a href="#about" class="cta-button">Learn More</a>
       </div>
@@ -42,10 +60,10 @@
 
   <section id="about" class="section">
     <div class="container">
+      <h2>About Me</h2>
       <div class="about-content">
         <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
-        <div class="about-text card">
-          <h2>About Me</h2>
+        <div class="about-text">
           <p>
             Passionate Sales Representative with a proven track record in delivering exceptional customer experiences. Skilled in understanding customer needs, communicating effectively, and maintaining a strong brand presence.
           </p>
@@ -61,27 +79,27 @@
     <div class="container">
       <h2>Skills &amp; Strengths</h2>
       <div class="skills-grid">
-        <div class="skill-card card">
+        <div class="skill-card">
           <span class="material-icons">group</span>
           <h3>Customer Experience</h3>
           <p>Deep understanding of customer needs.</p>
         </div>
-        <div class="skill-card card">
+        <div class="skill-card">
           <span class="material-icons">chat</span>
           <h3>Effective Communication</h3>
           <p>Clear and concise communication.</p>
         </div>
-        <div class="skill-card card">
+        <div class="skill-card">
           <span class="material-icons">campaign</span>
           <h3>Brand Presentation</h3>
           <p>Maintaining a professional brand image.</p>
         </div>
-        <div class="skill-card card">
+        <div class="skill-card">
           <span class="material-icons">school</span>
           <h3>Continuous Learning</h3>
           <p>Staying up-to-date with industry trends.</p>
         </div>
-        <div class="skill-card card">
+        <div class="skill-card">
           <span class="material-icons">search</span>
           <h3>Attention to Detail</h3>
           <p>Meticulous and focused on results.</p>
@@ -93,7 +111,7 @@
   <section id="accomplishments" class="section">
     <div class="container">
       <h2>Professional Accomplishments</h2>
-      <div class="accomplishments-list card">
+      <div class="accomplishments-list">
         <ul>
           <li>
             <span class="material-icons">emoji_events</span>
@@ -124,6 +142,157 @@
     <div class="container">
       <h2>Projects</h2>
       <div class="project-grid">
-        <a href="project1.html" class="project-card card">
+        <a href="project1.html" class="project-card">
           <img src="images/project1.jpg" alt="Project 1" class="project-image">
-          <
+          <div class="project-info">
+            <h3>Meta Sales Strategy</h3>
+            <p>Implemented innovative sales approach for Meta products</p>
+          </div>
+        </a>
+        <a href="project2.html" class="project-card">
+          <img src="images/project2.jpg" alt="Project 2" class="project-image">
+          <div class="project-info">
+            <h3>Daikin Market Expansion</h3>
+            <p>Strategic sales planning for new market territories</p>
+          </div>
+        </a>
+        <a href="project3.html" class="project-card">
+          <img src="images/project3.jpg" alt="Project 3" class="project-image">
+          <div class="project-info">
+            <h3>Customer Experience Enhancement</h3>
+            <p>Redesigned customer journey to improve satisfaction rates</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="container">
+      <h2>Professional Experience</h2>
+      <div class="experience-list">
+        <div class="experience-item">
+          <h3>Sales Representative - Meta</h3>
+          <div class="experience-details">2021 - Present</div>
+          <p>Representing Meta's innovative products and delivering exceptional customer experiences, consistently achieving top sales rankings across Canada.</p>
+        </div>
+        <div class="experience-item">
+          <h3>Sales Engineer - Daikin</h3>
+          <div class="experience-details">2019 - 2021</div>
+          <p>Managed technical sales and support, resulting in 800% increase in regional sales and expanded market presence.</p>
+        </div>
+        <div class="experience-item">
+          <h3>Customer Service Specialist - ABC Company</h3>
+          <div class="experience-details">2018 - 2019</div>
+          <p>Provided excellent customer support and maintained 100% satisfaction rating through effective communication and problem-solving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="education-list">
+        <div class="education-item">
+          <h3>Bachelor of Engineering - Mechanical</h3>
+          <div class="experience-details">Gujarat Technological University, 2018</div>
+          <p>Specialized in thermal engineering with focus on HVAC systems and sustainable design.</p>
+        </div>
+        <div class="education-item">
+          <h3>Professional Certification in Sales</h3>
+          <div class="experience-details">Sales Excellence Institute, 2019</div>
+          <p>Advanced training in consultative selling, customer relationship management, and sales analytics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2>Testimonials</h2>
+      <div class="testimonials-container">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial">
+                <p>"Dharmanshu is an exceptional sales professional. His deep understanding of products and customer needs sets him apart. He consistently goes above and beyond expectations."</p>
+                <div class="testimonial-author">- John Smith, Meta Regional Manager</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial">
+                <p>"Working with Dharmanshu was a game-changer for our business. His technical knowledge combined with sales expertise helped us find the perfect solution."</p>
+                <div class="testimonial-author">- Sarah Johnson, Client</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial">
+                <p>"Dharmanshu's attention to detail and commitment to customer satisfaction is remarkable. He's not just selling products; he's building lasting relationships."</p>
+                <div class="testimonial-author">- Michael Brown, Daikin Sales Director</div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <p><span class="material-icons">email</span> dharmanshu.poshiya@example.com</p>
+          <p><span class="material-icons">phone</span> +1 (123) 456-7890</p>
+          <p><span class="material-icons">location_on</span> Toronto, ON, Canada</p>
+          <p><span class="material-icons">language</span> www.dharmanshu.com</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Subject">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#"><span class="material-icons">linkedin</span></a>
+        <a href="#"><span class="material-icons">facebook</span></a>
+        <a href="#"><span class="material-icons">twitter</span></a>
+        <a href="#"><span class="material-icons">instagram</span></a>
+      </div>
+      <div class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="copyright">
+        &copy; 2025 Dharmanshu H. Poshiya. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Main JS -->
+  <script src="script.js"></script>
+</body>
+</html>
